@@ -28,9 +28,9 @@
                     <div class="form-group">
                         <label class="text-dark" for="">Nomor Telepon Pelapor <span class="text-danger">*</span></label>
                         <?php if(isset($_SESSION['logged'])) : ?>
-                            <input value="<?= $_SESSION['user']['no_hp'] ?>" type="text" name="nomorTelepon" maxlength="15" required class="form-control" placeholder="Masukan nomor telepon..." style="width: 100%;">
+                            <input value="<?= $_SESSION['user']['no_hp'] ?>" type="text" name="nomorTelepon" minlength="10" maxlength="15" required class="form-control" placeholder="Masukan nomor telepon..." style="width: 100%;" onkeypress="return justNumber(event)">
                         <?php else : ?>
-                            <input type="text" name="nomorTelepon" maxlength="15" required class="form-control" placeholder="Masukan nomor telepon..." style="width: 100%;">
+                            <input type="text" name="nomorTelepon" minlength="10" maxlength="15" required class="form-control" placeholder="Masukan nomor telepon..." style="width: 100%;" onkeypress="return justNumber(event)">
                         <?php endif; ?>
                     </div>
                     <div class="form-group">

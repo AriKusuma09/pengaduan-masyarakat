@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="" class="font-weight-bold" style="font-size: 13px;">Nomor Hp <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-user" maxlength="15" minlength="10" required
+                                        <input type="text" class="form-control form-control-user" maxlength="15" minlength="10" required onkeypress="return justNumber(event)" autocomplete="off"
                                              placeholder="Masukan Nomor Hp..." name="no_hp"> 
                                     </div>
                                 </div>
