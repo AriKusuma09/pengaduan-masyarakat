@@ -4,7 +4,7 @@
 
         public function __construct() {
             if (isset($_SESSION['logged'])) {
-                header('Location: ' . BASE_URL);
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
             } 
         }
 
@@ -36,6 +36,7 @@
 
             $user       = $this->model('UserModel')->findMasyarakatByEmail($_POST['email_address']); 
             $petugas    = $this->model('PetugasModel')->findPetugasByEmail($_POST['email_address']);
+            $admin      = $this->model('AdminModel')->findAdminByEmail($_POST['email_address']);
 
             if($user) {
                 if(password_verify($_POST['password'], $user['password'])) {
@@ -56,6 +57,12 @@
                     echo "Email atau password salah";
                     die;
                 }
+            } elseif($admin) {
+                if(password_verify($_POST['password'], $admin['password_admin'])) {
+                    $this->SessionAdmin($admin);
+                    header('Location: ' . BASE_URL . 'dashboard');
+                    return $admin;
+                }
             } else {
                 echo "Gagal";
                 die;
@@ -68,13 +75,20 @@
         }
 
         public function SessionUser($user) {
-            $_SESSION['user'] = $user;
+            $_SESSION['user']   = $user;
             $_SESSION['logged'] = true;
         }
 
         public function SessionPetugas($petugas) {
             $_SESSION['petugas'] = $petugas;
+            $_SESSION['logged']  = true;
+        }
+
+        public function SessionAdmin($admin) {
+            $_SESSION['admin']  = $admin;
             $_SESSION['logged'] = true;
+            $_SESSION['adminSesi'] = $_SESSION['admin']['role'] == 'admin';
+            $_SESSION['superadmin'] = $_SESSION['admin']['role'] == 'superadmin';
         }
 
     }

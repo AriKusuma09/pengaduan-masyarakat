@@ -46,11 +46,20 @@
                     <span>Dashboard</span></a>
             </li>
 
+            <!-- Admin -->
+            <?php if(isset($_SESSION['superadmin'])) : ?> 
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= BASE_URL ?>admin/">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Data Admin</span></a>
+                </li>
+            <?php endif; ?>
+
             <!-- Petugas -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= BASE_URL ?>petugas/">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Petugas</span></a>
+                    <span>Data Petugas</span></a>
             </li>
 
             <!-- Kategori Laporan -->
