@@ -7,7 +7,7 @@
             if (!isset($_SESSION['petugas']['id_petugas'])) {
                 header('Location: ' . BASE_URL);
                 exit;
-            }
+            } 
             $data['title-page'] = 'Dashboard';
 
             $this->view('templates/header', $data);

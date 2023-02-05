@@ -25,6 +25,12 @@
             return $this->db->allResult();
         }
 
+        // public function getLaporanByPetugasId($id) {
+
+        //     $query = "SELECT * "
+
+        // }
+
         public function createLaporan() {
 
             $query = "INSERT INTO {$this->tbLaporan} (judul_laporan, isi_laporan, nama_pelapor, nomor_telepon, tanggal_kejadian, lokasi_kejadian, instansi_tujuan, nama_kategori) VALUES (:judulLaporan, :isiLaporan, :namaPelapor, :nomorTelepon, :tglKejadian, :lokasiLaporan, :instansiLaporan, :kategoriLaporan)";
@@ -43,4 +49,10 @@
             return $this->db->rowCount();
 
         }
+
+        // public function updateLaporan() {
+
+        //     $query = "UPDATE {$this->tbLaporan} SET ()";
+
+        // }
     }
