@@ -64,7 +64,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label for="" class="font-weight-bold" style="font-size: 13px;">Email Address <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-user" maxlength="50" required
+                                        <input type="email" class="form-control form-control-user" maxlength="50" required
                                              placeholder="Masukan Email Address..." name="email_address">
                                     </div>
                                     <div class="col-sm-6">
