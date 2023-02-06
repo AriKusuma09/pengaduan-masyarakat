@@ -18,12 +18,8 @@
 
                         
                         <div class="text-center d-flex justify-content-center align-items-center mx-auto flex-column" style="height: 50vh;">
-                            <h2>Selamat Datang di Layanan Pengaduan Masyarakat</h2>
-                            <?php if(isset($_SESSION['isLogged'])) : ?>
-                                <a href="<?= BASE_URL ?>pengaduan/" class="btn btn-primary mt-3">Buat Laporan!</a>
-                            <?php else : ?>
-                                <a href="<?= BASE_URL ?>login/" class="btn btn-primary mt-3">Login!</a>
-                            <?php endif; ?>
+                            <h2>Selamat Datang di Dashboard Layanan Pengaduan Masyarakat</h2>
+                                <h3 class="font-weight-bold"><?= $_SESSION['petugas']['username_petugas'] ?? $_SESSION['admin']['username_admin'] ?></h3>
                         </div>
                         
                         

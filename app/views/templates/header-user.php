@@ -46,10 +46,15 @@
                                     <?= $_SESSION['user']['nama_lengkap'] ?>
                                 <?php elseif (isset($_SESSION['petugas']['username_petugas'])) : ?>
                                     <?= $_SESSION['petugas']['username_petugas'] ?>
+                                <?php elseif (isset($_SESSION['admin']['username_admin'])) : ?>
+                                    <?= $_SESSION['admin']['username_admin'] ?>    
                                 <?php endif; ?> 
                             </a>
                             <div class="dropdown-menu">
                                 <?php if(isset($_SESSION['petugas']['id_petugas'])) : ?>
+                                    <a class="dropdown-item font-weight-bold" href="<?= BASE_URL ?>dashboard/">Dashboard</a>
+                                <?php endif; ?>
+                                <?php if(isset($_SESSION['admin']['id_admin'])) : ?>
                                     <a class="dropdown-item font-weight-bold" href="<?= BASE_URL ?>dashboard/">Dashboard</a>
                                 <?php endif; ?>
                                 <?php if(isset($_SESSION['user']['id_masyarakat'])) : ?>

@@ -4,7 +4,7 @@
 
         public function __construct() {
             if (isset($_SESSION['logged'])) {
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                header('Location: ' . BASE_URL);
             } 
         }
 
@@ -62,6 +62,9 @@
                     $this->SessionAdmin($admin);
                     header('Location: ' . BASE_URL . 'dashboard');
                     return $admin;
+                } else {
+                    echo "Email atau password salah";
+                    die;
                 }
             } else {
                 echo "Gagal";

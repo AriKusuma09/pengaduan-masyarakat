@@ -45,6 +45,12 @@
             return $this->db->rowCount();
         } 
 
+        public function deletePetugas($id) {
+            
+            $query = "DELETE FROM {$this->tablePtgs} WHERE id_petugas = :id_petugas";
+
+        }
+
         public function findPetugasByEmail($email) {
             
             $query = "SELECT * FROM {$this->tablePtgs} WHERE email_petugas = :email_address";

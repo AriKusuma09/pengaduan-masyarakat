@@ -3,7 +3,7 @@
     Class Instansi extends Controller {
 
         public function index() {
-            if (!isset($_SESSION['petugas']['id_petugas'])) {
+            if (!isset($_SESSION['admin']['id_admin'])) {
                 header('Location: ' . BASE_URL);
             }
 

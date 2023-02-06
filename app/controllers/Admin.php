@@ -2,7 +2,11 @@
 
     Class Admin extends Controller {
 
-        
+        public function __construct() {
+                if(empty($_SESSION['admin']['role'] == 'superadmin')) {
+                    header('Location: ' . BASE_URL);        
+                }
+        }
 
         public function index() {
 

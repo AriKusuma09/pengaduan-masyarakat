@@ -55,28 +55,36 @@
                 </li>
             <?php endif; ?>
 
-            <!-- Petugas -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= BASE_URL ?>petugas/">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Data Petugas</span></a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= BASE_URL ?>admin/">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Laporan Masuk</span></a>
+                </li>
 
-            <!-- Kategori Laporan -->
+            <?php if(isset($_SESSION['admin']['id_admin'])) : ?>
+                <!-- Petugas -->
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= BASE_URL ?>petugas/">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Data Petugas</span></a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?= BASE_URL ?>kategori/">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Kategori</span></a>
-            </li>
+                <!-- Kategori Laporan -->
 
-            <!-- Instansi Laporan -->
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= BASE_URL ?>kategori/">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Kategori</span></a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?= BASE_URL ?>instansi/">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Instansi</span></a>
-            </li>
+                <!-- Instansi Laporan -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= BASE_URL ?>instansi/">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Instansi</span></a>
+                </li>
+            <?php endif; ?>
 
         </ul>
         <!-- End of Sidebar -->
@@ -264,7 +272,7 @@
                                             <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="userDropdown" role="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                                    <?= $_SESSION['petugas']['username_petugas'] ?>
+                                                    <?= $_SESSION['petugas']['username_petugas'] ?? $_SESSION['admin']['username_admin'] ?>
                                                     <img class="img-profile rounded-circle"
                                                     src="<?= BASE_URL ?>assets/img/undraw_profile.svg">
 

@@ -2,6 +2,12 @@
 
     Class Petugas extends Controller {
 
+        public function __construct() {
+            if(!isset($_SESSION['admin']['id_admin'])) {
+                header('Location: ' . BASE_URL );
+            }
+        }
+
         public function index() {
             $data['title-page'] = 'Petugas';
             $data['petugas'] = $this->model('PetugasModel')->getAllPetugas();
